@@ -18,6 +18,15 @@ development:
   password: password
   port: 5432
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: silver3377_development
+  pool: 5
+  username: sensenoy
+  password: semangelof12187557
+  port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
