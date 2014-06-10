@@ -3,6 +3,8 @@ en:
     confirm_dialog: 'You are sure?'
     projects:
       index:
+        menu: Projects
+        title: "Projects"
         by_state: 'By state'
         between_created_at: 'Created at between'
         submit: 'Filter'
@@ -16,12 +18,14 @@ en:
         last_modification: 'Last update'
     financials:
       index:
+        title: "Financials"
         submit: 'Filter'
         by_state: 'By state'
         by_progress: By progress %
+        menu: Financials
     users:
       index:
-        title: "Management contributions"
+        title: "Users"
         menu: Users
         credits: Credits
         credits_view: "Calculated credits"

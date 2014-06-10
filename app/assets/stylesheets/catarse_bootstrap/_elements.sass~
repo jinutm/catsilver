@@ -1,0 +1,29 @@
+html
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+  background: $white
+
+a, a:active
+  color: #000000
+  text-decoration: none
+  &:hover
+    color: #00ccff
+    text-decoration: underline
+  &:visited
+    color: #00ccff
+
+hr
+  border: 0
+  background: $border-strong
+  height: 1px
+
+.line-box
+  border-bottom: 1px solid $border-gray
+  padding: 4em 0
+  background: $gray-one
+
+.hidden
+  display: none
+
+.no-padding
+  padding: 0

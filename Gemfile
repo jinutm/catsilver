@@ -72,12 +72,12 @@ gem 'rmagick'
 # Other Tools
 gem 'to_xls'
 gem 'ranked-model'
-gem 'feedzirra'
+gem 'feedjira'
 gem 'inherited_resources',        '~> 1.4.1'
 gem 'has_scope', '~> 0.6.0.rc'
 gem 'spectator-validates_email',  require: 'validates_email'
 gem 'video_info', '>= 1.1.1'
-gem 'httparty', '~> 0.6.1' # this version is required by moip gem, otherwise payment confirmation will break
+gem 'httparty', '~> 0.12.0' # this version is required by moip gem, otherwise payment confirmation will break
 
 # Translations
 gem 'http_accept_language'
@@ -132,7 +132,7 @@ group :test do
   gem 'poltergeist'
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'shoulda', :require => false
   gem 'factory_girl_rails'
   gem 'capybara',   '~> 2.1.0'
   gem 'jasmine'

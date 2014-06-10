@@ -1,0 +1,11 @@
+h2  Just send my project and will it appear on the site now?
+p
+  Actually No,
+  strong We Select the the Project By Various Steps
+  |Your project will appear on #{Configuration[:company_name]} based on some criteria. We call this process of curation: our only intention is to promote Philanthropic projects. But do not worry: we are very open about what is a Philanthropic project :)
+h2 And what types of projects the #{Configuration[:company_name]} accepts?
+p SilverAlms being an exclusive philanthropic platform, allows users to create fund requests for personal needs or for a common cause. But we strictly allow only the requests that fit into one of our categories. We help you to reach your requests before the global community and receive help instantly. Before you start a campaign on silverAlms or before you donate hard earned money to needy ones, we request you to learn the process of doing so.
+p
+  strong We only accept philanthropic projects.
+
+p Bem, e qualquer dúvida que você tiver, é só falar com a gente #{mail_to Configuration[:email_contact], "por aqui", :target => :_blank}.

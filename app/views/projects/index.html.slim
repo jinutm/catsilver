@@ -1,16 +1,15 @@
 .banner
-  .content
-  = link_to t('main.banner'), "http://pesquisa.catarse.me", class: "more-projects"
+  .center
+  <iframe width="100%" height="360" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AkJAmtrxpnBZ" frameborder="0" allowfullscreen scrolling="no"></iframe>
 #page_content
   .container
     .main
-      - if current_user && @projects_near.present?
-        section.near_projects.list
-          header
-            h2.list-title= t('sections.near.title')
-            = link_to t('main.links.near'), explore_path(anchor: "near_of/" ) + current_user.address_state, class: "more-projects"
-          .projects
-            == render @projects_near
+      section.expiring_projects.list
+        header
+          h2.list-title= t('sections.expiring.title')
+          = link_to t('main.links.expiring'), explore_path(anchor: :expiring), class: "more-projects"
+        .projects
+          == render @expiring
 
       section.selected_projects.list
         header
@@ -19,20 +18,6 @@
         .projects
           == render @recommends
 
-      section.channel_projects.list
-        header
-          h2.list-title= t('sections.channels.title')
-          = link_to t('main.links.channels'), root_url(subdomain: 'asas'), class: "more-projects"
-        .projects
-          == render @channel_projects
-
-      section.expiring_projects.list
-        header
-          h2.list-title= t('sections.expiring.title')
-          = link_to t('main.links.expiring'), explore_path(anchor: :expiring), class: "more-projects"
-        .projects
-          == render @expiring
-
       section.recents_projects.list
         header
           h2.list-title= t('sections.recents.title')
@@ -40,29 +25,38 @@
         .projects
           == render @recent
 
+      - if current_user && @projects_near.present?
+        section.near_projects.list
+          header
+            h2.list-title= t('sections.near.title')
+            = link_to t('main.links.near'), explore_path(anchor: "near_of/" ) + current_user.address_state, class: "more-projects"
+          .projects
+            == render @projects_near
+
+
     aside.main-sidebar
       section.main-sidebar-division
-        h3.title= t('sidebar.titles.blog')
-        ul
-          - (Blog.fetch_last_posts rescue [])[0..2].each do |post|
-            li.post
-              h2
-                = link_to post.url, target: '__blank', class: 'post-title' do
-                  = truncate(post.title, length: 80)
-              p.post-author= "#{t('projects.box.by')} #{post.author} #{t('projects.box.when')} #{l(post.published.to_date)}"
-              = link_to post.url, target: '__blank', class: 'post-resume' do
-                = truncate(post.summary, length: 130).html_safe
+        h3.title= t('sidebar.links.cat')
+        ul.sidebar-list
+          li= link_to t('sidebar.links.cha').html_safe
+          li= link_to t('sidebar.links.con').html_safe
+          li= link_to t('sidebar.links.dai').html_safe
+          li= link_to t('sidebar.links.edu').html_safe
+          li= link_to t('sidebar.links.hand').html_safe
+          li= link_to t('sidebar.links.hom').html_safe
+          li= link_to t('sidebar.links.indbt').html_safe
+          li= link_to t('sidebar.links.jobl').html_safe
+          li= link_to t('sidebar.links.livly').html_safe
+          li= link_to t('sidebar.links.meda').html_safe
+          li= link_to t('sidebar.links.pubw').html_safe
+          li= link_to t('sidebar.links.reli').html_safe
+          li= link_to t('sidebar.links.othr').html_safe
 
       section.main-sidebar-division
-        h3.title= t('sidebar.titles.newsletter')
-        = render 'layouts/newsletter'
-
+        <iframe width="200" height="400" style="border:none;" src="http://output60.rssinclude.com/output?type=iframe&amp;id=886573&amp;hash=91c7b0a448570a0f8a7802664fea2ad4"></iframe>
 
       section.main-sidebar-division
         .fb-like-box data-href="#{Configuration['facebook_url']}" data-width="200" data-height="300" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"
 
-
-      section.main-sidebar-division
-        = link_to t('sidebar.titles.twitter'), "https://twitter.com/#{Configuration['twitter_username']}", class: 'twitter-timeline', data:{widget_id:"375343843308089345", chrome:"nofooter"}
 
     .clearfix

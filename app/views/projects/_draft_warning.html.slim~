@@ -1,0 +1,37 @@
+br
+- if policy(@project).update?
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Welcome to Draft!
+      #toggle_warning
+        = link_to '(minimize)', '#'
+      #project_warning_text
+        br/
+        br/
+        | To edit the page of your project look under the tab <strong> EDIT </strong>, take all changes to the form and click <strong> UPDATE INFORMATION </strong>.
+        br/
+        | Rewards can be added directly into the column where they are exposed to it just click ADD <strong> REWARD </strong> 
+        br/
+        br/
+        strong Important
+        br/
+        | Your project will only be evaluated by our staff when you click the SEND button. We will analyze the consistency of your project based only on the information provided in your draft, 
+        | so it is quite clear and objective in building this page. The <strong> video </strong> is not required for the evaluation, only for the project to air. 
+        br/
+        br/
+        strong Troubleshooting:
+        br/
+        | Checkout: #{link_to 'Support Forum', 'http://blog.silveralms.com', target: '__blank'}
+      br/
+      br/
+- else
+  #project_warning.bootstrap-alert
+    .alert.alert-warning
+      i Atenção! Este projeto ainda está em rascunho.
+      #toggle_warning
+        = link_to '(minimizar informações)', '#'
+      #project_warning_text
+        br/
+        br/
+        | Este projeto ainda não está apto a receber contribuições financeiras e as informações dessa página não são definitivas. 
+        | Se você quer dar uma força desde já, deixe seu feedback para o(a) realizador(a) na <strong>Aba de Comentários</strong>.
