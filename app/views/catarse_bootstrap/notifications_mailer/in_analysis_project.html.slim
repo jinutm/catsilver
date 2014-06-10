@@ -4,38 +4,37 @@
 - project_link = project_by_slug_url(permalink: project.permalink)
 - company_name = ::Configuration[:company_name]
 
-|Olá, #{user.name}!
+|Hello, #{user.name}!
 br
 br
-| Nossa equipe acabou de receber o projeto  #{link_to project.name, project_link, target: '__blank'}
+| Our team has just received the project  #{link_to project.name, project_link, target: '__blank'}
 br/
 br/
-| Durante os próximos 4 dias úteis, iremos analisar o rascunho de projeto que você nos enviou e te daremos uma resposta.
+| During the next 4 days, we will analyze the draft project you sent us and we'll give you an answer.
 br
 br
-strong Você pode receber 3 tipos de resposta: 
+strong You can get 3 types of response: 
 br/
 br/
-strong Opção 1: 
-| Seu rascunho passou na análise, foi aceito e poderá ir ao ar! 
+strong Option 1: 
+| Your draft passed in the analysis, was accepted and will be aired! 
 br/
-| Agora é só marcarmos o dia e hora para estreiar seu projeto no site do Catarse!
-br/
-br/
-strong Opção 2: 
-| Nos parece que o seu projeto tem muito ver com o #{company_name}, mas ainda precisa de alguns ajustes para ir para o ar. Vamos entrar em contato para entender possibilidades , sugerir coisas e tirar algumas dúvidas. 
+| Now just arrange the day and time to debut your design on the site SilverAlms
 br/
 br/
-strong Opção 3: 
-| Infelizmente, o rascunho de projeto que você enviou não se encaixa no perfil do site do #{company_name}. 
-| Enviaremos um email notificando a recusa. Sim, sabemos que recusas são sempre desagradáveis. Mas o lema aqui é 
-| "levanta, sacode a poeira e dá a volta por cima". Mas antes de sacudir qualquer poeira, 
-| estude nossa #{link_to 'Central de Suporte', ::Configuration[:support_forum], target: '__blank'}  para que você saiba tudo sobre nossos pré-requisitos para a construção do seu próximo projeto.
+strong Option 2: 
+| It seems to us that your project has a lot do with the #{company_name}, but still needs some tweaking to go to the air. Let us contact you to understand possibilities, suggest things and take some questions. 
 br/
 br/
-| Lembrando que você pode tirar dúvidas conosco respondendo diretamente a esta mensagem ou através do e-mail #{mail_to ::Configuration[:email_projects]}
+strong Option 3: 
+| Unfortunately, the draft project you sent does not fit the profile of the site #{company_name}. 
+| Send an email notifying the refusal. Yes, we know that refusals are always unpleasant. But the theme here is
+| "lifts, shakes the dust and gives a comeback." But before shaking any dust,
+| Please Study #{link_to 'support center', ::Configuration[:support_forum], target: '__blank'} so that you know everything about our prerequisites for the construction of your next project
+br/
+| Remember that you can ask questions to us directly responding to this message or e-mail #{mail_to ::Configuration[:email_projects]}
 br/
 br/
-|Um abraço,
+|A Hug,
 br/
 = company_name

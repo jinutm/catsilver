@@ -1,0 +1,36 @@
+p Here are all the payment details:
+p
+  | Name of Supporter: #{(contribution.payer_name || contribution.user.display_name)}
+  br/
+  | PAN/NI/SSN of Supporter: #{(contribution.payer_document || contribution.user.cpf)}
+  br/
+  | Date of confirmation of support: #{l contribution.confirmed_at}
+  br/
+  | Payment Option: #{contribution.payment_choice}
+  br/
+  | Amount of contribution: #{number_to_currency contribution.value}
+  br/
+  -if contribution.reward.present?
+    | Reward Selected: #{contribution.reward.description}
+    br/
+    | Delivery Estimates: #{contribution.reward.display_deliver_estimate}
+    br/
+  | ID support: #{contribution.key}
+  br/
+  | Name / Trade Name of director: #{contribution.project.user.display_name}
+  br/
+  | PAN/NI/SSN of Director: #{contribution.project.user.cpf}
+
+p 
+  | Importantly SilverAlms is the only mediator of this process,
+  | so if you have any questions regarding the project or reward selected among
+  | directly contact the director via e-mail #{mail_to contribution.project.user.email}.  
+  | Ah! Remember to keep this email as it contains important information 
+  | about their contribution to the project.
+p If you got any questions, please contact us replying to this message or e-mail #{mail_to Configuration[:email_contact]}
+
+p
+  | Best wishes and thank you,
+  br/
+  | #{Configuration[:company_name]}
+

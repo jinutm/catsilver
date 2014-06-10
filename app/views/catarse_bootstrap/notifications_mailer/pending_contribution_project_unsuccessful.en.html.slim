@@ -2,43 +2,43 @@
 |Olá, #{contribution.user.name}!
 br
 br
-|Infelizmente o projeto #{link_to(contribution.project.name, "#{Configuration[:base_url]}/projects/#{contribution.project.to_param}")} não atingiu a meta estabelecida e não foi financiado no #{Configuration[:company_name]}.
+|Unfortunately the project #{link_to(contribution.project.name, "#{Configuration[:base_url]}/projects/#{contribution.project.to_param}")} does not hit the target has not been established and funded in #{Configuration[:company_name]}.
 br
 br
-|Vimos no nosso banco de dados que você iniciou há alguns dias o processo de apoio para o projeto.
+|We saw in our database that you started a few days ago the process of support for the project.
 br
 br
-b Se você NÃO concluiu o apoio
-|, pode desconsiderar as informações desse e-mail, ok?
+b If you have NOT completed the support
+|, can disregard the information in this e-mail, ok?
 br
 br
-b Se você concluiu o seu apoio
-|, mas não recebeu a confirmação do Catarse ainda (isso pode acontecer nesses casos), você deverá recebê-la nos próximos dias, assim que o MoIP (o meio de pagamento que processa as transações do Catarse) confirmar para nós o seu pagamento.
+b If you completed your support
+|, but have not received confirmation yet (this can happen in these cases), you should receive it in the coming days, so PayPal (the means of payment processing transactions) confirm to us your payment.
 br
 br
-|Quando recebermos a confirmação do seu apoio, você receberá, em função disto, #{contribution.display_value} em créditos para apoiar outros projetos.
+|Once we receive confirmation of your support, you will receive, #{contribution.display_value} in credits to support other projects.
 br
 br
-|Caso prefira, você pode pedir o reembolso do seu dinheiro clicando #{link_to("aqui", "#{Configuration[:base_url]}/users/#{contribution.user.to_param}#credits")}.
-|Caso você tenha alguma dificuldade nesse processo, envie um email para #{mail_to Configuration[:email_payments]} com o assunto “Dúvida reembolso - problema no login”.
+|If you prefer, you may request a refund of your money by clicking #{link_to("aqui", "#{Configuration[:base_url]}/users/#{contribution.user.to_param}#credits")}.
+|If you have any difficulty in this process, please email #{mail_to Configuration[:email_payments]} with the subject "Doubt refund - problem in email”.
 br
 br
-|Se você preferir solicitar o reembolso, só para lembrar, como constam nos #{link_to("Termos de Uso do #{Configuration[:company_name]}","#{Configuration[:base_url]}/terms")}, que se o apoio foi feito com cartão de crédito,
-|o valor será estornado na próxima fatura do cartão. Se o apoio foi feito através de transferência bancária ou boleto, enviaremos um e-mail
-|com os procedimentos necessários para poder devolver o valor para você.
+|If you prefer to request a refund, only to remember, as contained in #{link_to("Terms and Conditions #{Configuration[:company_name]}","#{Configuration[:base_url]}/terms")}, that the support was made by credit card,
+|the amount will be reversed in the next bill the card. If the support was done through bank transfer or bill, send an e-mail 
+|with the procedures necessary to return the value to you.
 br
 br
-|Se, por qualquer motivo, quiser entrar em contato com #{contribution.project.user.display_name}, mande um email para #{mail_to contribution.project.user.email}.
+|If for any reason you want to contact #{contribution.project.user.display_name}, send and email #{mail_to contribution.project.user.email}.
 br
 br
-|Se tiver alguma outra dúvida, entre em contato conosco na nossa Central de Suporte:
+|If you have any other questions, please contact us in our Support Center:
 br
-= link_to 'http://suporte.catarse.me/', 'http://suporte.catarse.me/'
+= link_to 'http://blog.silveralms.com/forum', 'http://blog.silveralms.com'
 br
-|Chave do apoio: #{contribution.key}
-br
-br
-|Um grande abraço,
+|Key support: #{contribution.key}
 br
 br
-|Equipe do #{Configuration[:company_name]}
+|A big hug,
+br
+br
+|The team #{Configuration[:company_name]}

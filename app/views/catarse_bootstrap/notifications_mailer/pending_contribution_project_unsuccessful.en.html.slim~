@@ -1,0 +1,44 @@
+- contribution = @notification.contribution
+|Olá, #{contribution.user.name}!
+br
+br
+|Unfortunately the project #{link_to(contribution.project.name, "#{Configuration[:base_url]}/projects/#{contribution.project.to_param}")} does not hit the target has not been established and funded in #{Configuration[:company_name]}.
+br
+br
+|We saw in our database that you started a few days ago the process of support for the project.
+br
+br
+b If you have NOT completed the support
+|, can disregard the information in this e-mail, ok?
+br
+br
+b If you completed your support
+|, but have not received confirmation yet (this can happen in these cases), you should receive it in the coming days, so PayPal (the means of payment processing transactions) confirm to us your payment.
+br
+br
+|Once we receive confirmation of your support, you will receive, #{contribution.display_value} in credits to support other projects.
+br
+br
+|If you prefer, you may request a refund of your money by clicking #{link_to("aqui", "#{Configuration[:base_url]}/users/#{contribution.user.to_param}#credits")}.
+|If you have any difficulty in this process, please email #{mail_to Configuration[:email_payments]} with the subject "Doubt refund - problem in email”.
+br
+br
+|If you prefer to request a refund, only to remember, as contained in #{link_to("Terms and Conditions #{Configuration[:company_name]}","#{Configuration[:base_url]}/terms")}, that the support was made by credit card,
+|the amount will be reversed in the next bill the card. If the support was done through bank transfer or bill, send an e-mail 
+|with the procedures necessary to return the value to you.
+br
+br
+|Se, por qualquer motivo, quiser entrar em contato com #{contribution.project.user.display_name}, mande um email para #{mail_to contribution.project.user.email}.
+br
+br
+|Se tiver alguma outra dúvida, entre em contato conosco na nossa Central de Suporte:
+br
+= link_to 'http://suporte.catarse.me/', 'http://suporte.catarse.me/'
+br
+|Chave do apoio: #{contribution.key}
+br
+br
+|Um grande abraço,
+br
+br
+|Equipe do #{Configuration[:company_name]}

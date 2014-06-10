@@ -1,36 +1,34 @@
-p Seguem todos os dados do pagamento:
+p Here are all the payment details:
 p
-  | Nome do apoiador: #{(contribution.payer_name || contribution.user.display_name)}
+  | Name of Supporter: #{(contribution.payer_name || contribution.user.display_name)}
   br/
-  | CPF/CNPJ do apoiador: #{(contribution.payer_document || contribution.user.cpf)}
+  | PAN/NI/SSN of Supporter: #{(contribution.payer_document || contribution.user.cpf)}
   br/
-  | Data da confirmação do apoio: #{l contribution.confirmed_at}
+  | Date of confirmation of support: #{l contribution.confirmed_at}
   br/
-  | Opção de pagamento: #{contribution.payment_choice}
+  | Payment Option: #{contribution.payment_choice}
   br/
-  | Valor da contribuição: #{number_to_currency contribution.value}
+  | Amount of contribution: #{number_to_currency contribution.value}
   br/
   -if contribution.reward.present?
-    | Recompensa selecionada: #{contribution.reward.description}
+    | Reward Selected: #{contribution.reward.description}
     br/
-    | Estimativa de entrega: #{contribution.reward.display_deliver_estimate}
+    | Delivery Estimates: #{contribution.reward.display_deliver_estimate}
     br/
-  | ID do apoio: #{contribution.key}
+  | ID support: #{contribution.key}
   br/
-  | Nome/Razão Social do realizador: #{contribution.project.user.display_name}
-  br/
-  | CPF/CNPJ do realizador: #{contribution.project.user.cpf}
+  | Name / Trade Name of director: #{contribution.project.user.display_name}
 
 p 
-  | É importante ressaltar que o Catarse é apenas intermediador desse processo,
-  | portanto, se tiver alguma dúvida em relação ao projeto ou recompensa selecionada entre 
-  | em contato diretamente com o realizador através do e-mail #{mail_to contribution.project.user.email}.  
-  | Ah! Lembre-se de guardar este email, pois ele contém informações importantes 
-  | a respeito da sua contribuição ao projeto.
-p Se ficou com alguma dúvida, entre em contato conosco respondendo a esta mensagem ou através do e-mail #{mail_to Configuration[:email_contact]}
+  | Importantly SilverAlms is the only mediator of this process,
+  | so if you have any questions regarding the project or reward selected among
+  | directly contact the director via e-mail #{mail_to contribution.project.user.email}.  
+  | Ah! Remember to keep this email as it contains important information 
+  | about their contribution to the project.
+p If you got any questions, please contact us replying to this message or e-mail #{mail_to Configuration[:email_contact]}
 
 p
-  | Um abraço e muito obrigado,
+  | Best wishes and thank you,
   br/
   | #{Configuration[:company_name]}
 

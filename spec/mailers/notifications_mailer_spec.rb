@@ -9,9 +9,9 @@ describe NotificationsMailer do
       notification
       Mail::Message.any_instance.stub(:deliver)
       NotificationsMailer.any_instance.should_receive(:mail).with({
-        from: "Catarse <contact@foo.bar>",
+        from: "Catarse <contact@support.silveralms.com>",
         to: notification.user.email,
-        subject: 'Recibo provisório: apoio confirmado para Foo bar',
+        subject: 'Confirmation',
         template_name: 'confirm_contribution'
       })
     end
